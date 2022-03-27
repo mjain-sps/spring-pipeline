@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <!-- css link for contact -->
+    <link rel="stylesheet" th:href="@{/css/contact.style.css}">
+    <script defer th:src="@{/js/contact.js}"></script>
+
+
+    <!-- Link for Fontawesome -->
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body th:replace="fragments/base::common-body(~{::#ContactPage},~{} ,~{::script})">
+
+<!-- Contact Content -->
+
+<div id="ContactPage">
+
+
+    <div class="container">
+        <span class="top-big-circle"></span>
+        <div class="form">
+            <div class="contact-info">
+                <h3 class="title">Contact Our Administrator</h3>
+                <p class="text"> If you have any enquires with our services, please do not hesitate to reach out to our team.</p>
+
+                <div class="info">
+                    <div class="information">
+                        <i class="fa fa-street-view" ></i>
+                        <p>70 Arofan House Cardiff, CF24 D3S</p>
+                    </div>
+                    <div class="information">
+                        <i class="fa fa-envelope" ></i>
+                        <p>CarfiffCommunity@gmail.com</p>
+                    </div>
+                    <div class="information">
+                        <i class="fa fa-phone" ></i>
+                        <p>07345569823</p>
+                    </div>
+                </div>
+
+                <div id="social-media">
+                     <p>Connect with us:</p>
+                     <div id="social-icons">
+                         <a href="">
+                             <i class="fa fa-facebook"></i>
+                         </a>
+                         <a href="">
+                             <i class="fa fa-twitter"></i>
+                         </a>
+                         <a href="">
+                             <i class="fa fa-instagram"></i>
+                         </a>
+                         <a href="">
+                             <i class="fa fa-linkedin"></i>
+                         </a>
+                     </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+            <span class="circle one"></span>
+            <span class="circle two"></span>
+
+                <form autocomplete="off">
+                    <h3 class="title">Contact Us</h3>
+                    <div class="input-container">
+                        <input id="name" type="text" name="name" class="input">
+                        <label for="name">Fullname</label>
+                        <span>Fullname</span>
+                    </div>
+                    <div class="input-container">
+                        <input id="email" type="email" name="email" class="input">
+                        <label for="email">Email</label>
+                        <span>Email</span>
+                    </div>
+                    <div class="input-container">
+                        <input id="phone" type="tel" name="phone" class="input">
+                        <label for="phone">Phone</label>
+                        <span>Phone</span>
+                    </div>
+                    <div class="input-container textarea">
+                        <textarea name="message" id="message" class="input"></textarea>
+                        <label for="message">Message</label>
+                        <span>Messages</span>
+                    </div>
+                    <!-- creating a send button and download button -->
+                    <div id="bottom-btn">
+                        <div id="float-left">
+                    <input id="contactBtn" type="submit" value="Send" class="btn"/>
+                        </div>
+                    <div id="upload-btn">
+                        <!-- updated upload button -->
+                        <label  id ="upload-container" for="uploadInput"><i id="upload-icon" name="upload-icon" class="fa fa-upload"></i></label>
+                        <input id="uploadInput" name="uploadInput" type="file"  hidden/>
+                    </div>
+                    <div class="uploadStatus" >
+                        <p id="print-file-upload">Upload Status</p>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

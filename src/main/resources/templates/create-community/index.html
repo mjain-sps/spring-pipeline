@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:replace="fragments/base::common-header(~{::title},~{::link})">
+    <meta charset="UTF-8">
+    <title>Create Community</title>
+    <link th:href="@{/css/community.add.styles.css}" rel="stylesheet"/>
+
+    <!--    Google Fonts connect-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar&family=Montserrat&family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+<body th:replace="fragments/base::common-body(~{::#add-community},~{} ,~{::script})">
+<div id="add-community">
+
+    <!--    We create a div which will be container for form and image-->
+    <div class="community-add__form-container">
+        <div class="community-add__image-container">
+            <div class="community-add__image-vignette"></div>
+            <img th:src="@{/images/add-community/add-community-bg.jpeg}" alt="community-upload"/>
+            <div class="community-add__form">
+                <div class="container">
+                    <div class="row">
+                        <div class="col pt-2 pb-2">
+                            <div class="input-group mb-4">
+                                <label for="community-name" class="input-group-text">Add Community Name</label>
+                                <input class="form-control"
+                                       placeholder="Community Name"
+                                       name="community-name"
+                                       id="community-name"
+                                       aria-label="Community Name"
+                                       type="text"
+                                />
+                            </div>
+                            <!--                            Description-->
+                            <div class="input-group mb-2">
+                                <label for="community-name" class="input-group-text">Add Community Description</label>
+                                <textarea class="form-control"
+                                          placeholder="Community Description"
+                                          name="community-description"
+                                          id="community-description"
+                                          aria-label="Community Description"
+                                          rows="4"
+                                ></textarea>
+                            </div>
+                            <!--                            Address of the community TODO-->
+<!--                         Image upload container-->
+                            <div>
+                             <p >Upload Image For Community</p>
+                                <div class="image-upload__CTA-container input-group mb-2">
+                                   <div>
+                                       <label for="uploadImage-CTA" class="upload-image__label">UPLOAD IMAGE</label>
+                                       <input type="file" id="uploadImage-CTA" hidden />
+                                   </div>
+                                    <div>
+                                        <p id="upload-image__status">Upload status</p>
+                                    </div>
+                                </div>
+                         </div>
+                            <div class="com-add__disclaimer lead mb-2">
+                                Please note, that while creating the community, we will hold the information
+                                of the user who has created the community. This information will be stored on our
+                                secured database and will not be disclosed until you as a user allow/request us.
+                                To become a member of this community, you may click on the following link.
+                                http://localhost:8080/joinmember/community/1/user/2
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <button class="com-add__submit-button"
+                                        type="button" id="add-community_CTA"
+                                >ADD COMMUNITY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Attach JS here-->
+<script th:src="@{/js/community.add.js}"></script>
+</body>
+</html>

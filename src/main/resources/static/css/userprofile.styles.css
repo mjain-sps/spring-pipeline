@@ -1,0 +1,32 @@
+h1{
+    background-color: #87cefa;
+    border: 1px solid teal;
+    padding: 3px;
+    text-align:left;
+}
+
+.profileImage{
+position:absolute;
+right:100px;
+max-width:200px;
+max-height:200px;
+}
+
+.form-container{
+    padding: 10px;
+    background-color:whitesmoke;
+    border: 5px solid teal;
+    border-color:#87cefa;
+    width: 800px;
+    height: 1150px;
+}
+
+.editProfileImage-button{
+    text-align:center;
+    padding:10px;
+}
+
+.button-container{
+    text-align:center;
+    padding: 10px;
+}

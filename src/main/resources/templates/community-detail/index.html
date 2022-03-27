@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:replace="fragments/base::common-header(~{::title},~{::link})">
+    <meta charset="UTF-8">
+    <title>Create Project</title>
+    <link th:href="@{/css/community.details.styles.css}" rel="stylesheet"/>
+
+    <!--    Google Fonts connect-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar&family=Montserrat&family=Oswald:wght@200&display=swap"
+          rel="stylesheet">
+</head>
+<body th:replace="fragments/base::common-body(~{::#community-details},~{} ,~{::script})">
+<div id="community-details">
+
+    <div class="container mb-5">
+        <div class="row">
+            <h4 th:text="${community.name}" class="display-4"></h4>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row mb-5">
+            <div class="col col-md-5">
+                <img class="img-fluid community-details__img" th:src="@{${'/uploads/'+community.communityImage}}" alt="community-picture"/>
+            </div>
+            <div class="col col-md-5 d-flex flex-column justify-content-evenly align-items-left community-details__info-container">
+                <h6 class="display-6">About us...</h6>
+                <p class="lead" th:text="${community.description}"></p>
+                <div style="display: flex">
+                    <p class="lead" style="width:40%" th:text="'Total Members:'+ ${communityUsersCount}"></p>
+                    <button style="width: 40%" class="btn btn-sm btn-outline-info community_members-modal--show" type="button" >VIEW ALL</button>
+                </div>
+                <p class="lead" th:text="'Total Projects: '+ ${communityProjectsCount} " ></p>
+                <p class="lead" th:text="'Total Events: '+ ${communityEventsCount} " ></p>
+                <div class="button__group">
+                    <button class="btn btn-success" type="button" id="join_community-modal-show">JOIN US HERE</button>
+                    <a class="btn btn-dark" th:href="@{'/event/parent/'+${community.id} +'/?parent=community'}">View All Events</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="community-events-projects__container">
+            <div class="community-event__container" >
+                <h6 class="display-6">Upcoming Events</h6>
+                <!--Place holder to display a list of events(Glimpse) TODO-->
+                <div class="community-event__card" th:each="event:${communityEvents}">
+                    <div class="event_card--header">
+                        <p class="display-6" th:text="${event.name}"></p>
+                        <p class="lead" th:text="${event.date}"></p>
+                    </div>
+                    <div class="event-card__footer">
+                        <a th:href="@{${'/event/'+event.id}}" class="btn btn-light">INTERESTED</a>
+                    </div>
+                </div>
+            </div>
+                <!-- Projects For a Particular Community -->
+            <div class="community-project--list__container">
+                <h6 class="display-6">Projects undertaken</h6>
+                <div class="community__project-card" th:each="project:${communityProjects}">
+                   <img th:src="@{${'/uploads/'+project.projectCoverImage}}" alt="project-picture"/>
+                    <div class="community-project_card--footer">
+                        <h6 class="display-6" th:text="${project.name}"></h6>
+                        <p th:text="${project.description}"></p>
+                        <a class="btn btn-dark" th:href="@{${'/project/'+project.id}}">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+<!--    Custom MODAL-->
+    <div class="background--drop model__hide">
+
+    </div>
+
+<!--    Modal which shows the disclaimer before joining the community-->
+    <div class="join-community__disclaimer model__hide">
+        <div class="container">
+            <h6 class="display-6"> Read Disclaimer</h6>
+            <p class="lead">Please read following terms and conditions before joining to the community</p>
+            <p class="lead">By agreeing to joining the community, do you give your consent for the following?</p>
+
+            <p class="lead">1. Your name to be shown in the list of community members</p>
+            <p class="lead">2. Receive weekly updates related on ongoing projects and events</p>
+            <p class="lead">3. Receive requests to contribute to the project fundings related to this community.</p>
+            <p class="lead">You are allowed to join multiple communities</p>
+            <p class="lead">As a member of the community you are eligible to create projects within the community</p>
+            <p class="lead">As a member of the community you are eligible to create events within the community</p>
+            <h6 class="display-6">Do you wish to proceed?</h6>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success join_community--CTA" data-dismiss="modal">Proceed</button>
+                <button type="button" class="btn btn-outline-danger close_modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+<!--    Modal which displays the list of members-->
+    <div class="community-members__modal model__hide ">
+        <div class="container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user:${communityUsers}">
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}">Otto</td>
+                    <td class="btn btn-sm btn-outline-success">Contact</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger close_modal--comunnity-members">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--Attach JS here-->
+<script th:src="@{/js/community.details.js}"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:replace="fragments/base::common-header(~{::title},~{::link})">
+    <meta charset="UTF-8">
+    <title>View Event</title>
+    <link th:href="@{/css/event.details.styles.css}" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar&family=Montserrat&family=Oswald:wght@200&display=swap"
+          rel="stylesheet">
+</head>
+<body th:replace="fragments/base::common-body(~{::#event-details},~{} ,~{::script})">
+<div id="event-details">
+    <h4 th:text="${event.name}" class="display-4"></h4>
+    <main class="wrapper">
+        <time class ="one">
+            <h6 class="display-6">Date of Event: </h6>
+            <p class="lead" th:text="${event.date}"></p>
+        </time>
+        <section class ="two">
+            <h6 class="display-6">Image: </h6>
+            <img class="img-fluid" th:src="@{${'/uploads/'+event.eventImage}}" alt="event-picture"/>
+        </section>
+        <section class ="three">
+            <h6 class="display-6">About the Event: </h6>
+            <p class="lead" th:text="${event.aboutSection}"></p>
+        </section>
+        <section class = "four">
+            <h6 class="display-6">Contributors: </h6>
+            <p class="lead" th:text="${event.contributors}"></p>
+        </section>
+        <details class = "five">
+            <summary class="display-6"> Location: </summary>
+            <p class="lead" th:text="${event.address}"></p>
+        </details>
+        <aside class = "six">
+            <h6 class="display-6">Community: </h6>
+            <p class="lead" th:text="${eventCommunity} ? ${eventCommunity.name} : 'There is no community associated with this event.' "></p>
+            <h6 class="display-6">Project: </h6>
+            <p class="lead" th:text=" ${eventProject} ? ${eventProject.name} :'There is no project associated with this event.'"></p>
+        </aside>
+    </main>
+</div>
+<script th:src="@{/js/event.details.js}"></script>
+</body>
+</html>

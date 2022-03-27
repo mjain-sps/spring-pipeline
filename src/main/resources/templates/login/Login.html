@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link th:href="@{/css/login.styles.css}" rel="stylesheet"/>
+    <!-- Bootstrap CSS added -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous"/>
+</head>
+<body th:replace="fragments/base::common-body(~{::#login-page},~{}, ~{::script})">
+<div id="login-page">
+    <div class="login-container">
+        <div class="login__header-container">
+            <h4>L O G I N</h4>
+        </div>
+            <div class="login__form-container">
+                <form action="/processFormPost" method="Post">
+
+                    <div>
+                        <input  id="email" placeholder="E M A I L" type="email"
+                               name="email"/>
+                    </div>
+
+                    <div>
+                        <input  id="password" placeholder="P A S S W O R D" type="password"
+                               name="password"/>
+                    </div>
+                   
+                    <div class="button-container">
+                        <button id="loginUser-button" class="btn btn-sm btn-dark" >LOGIN</button>
+                    </div>
+
+                    <div class="signUpLinkButton-container">
+                        <span> Need an Account?</span>
+                        <a href="http://localhost:8081/SignUp" >Sign Up</a>
+                    </div>
+
+                </form>
+            </div>
+   
+
+    </div>
+
+    <div class="disclaimer-section hide_disclaimer">
+<!--    Model which shows the cookie disclaimer before signing up-->
+    <div class="disclaimer-content-section">
+        <p class="title-disclaimer" > Cookie Disclaimer </p>
+        <p >Please read the following disclaimer before logging in:</p>
+        <p >This website uses cookies, by logging in do you give your consent to the following:</p>
+        <p >Cookies are stored in your browser for a maximum of 24 hours and are used to store user information
+            including a user-Id, name and email when you login to your user account. This information is used for the purpose of
+            identifying which users have joined which community and to identify which users have created particular communities,
+            projects, events and user profiles. For example, when a project is created, the user-Id will be stored in a local
+            database alongside the rest of the project information.</p>
+        <p > This website uses only first-party cookies and the information contained within the cookie is not shared with
+            any third-party.</p>
+        <p >Do you consent to the use of cookies?</p>
+        <div class="modal-footer">
+            <button id= "consent" type="button" class="btn btn-sm btn-outline-dark create_event--CTA" data-dismiss="model">Accept</button>
+            <button type="button" class="btn btn-sm btn-outline-danger close_model">Reject</button>
+        </div>
+    </div>
+    </div>
+  
+
+</div>
+<script th:src="@{/js/login.js}"></script>
+</body>
+</html>

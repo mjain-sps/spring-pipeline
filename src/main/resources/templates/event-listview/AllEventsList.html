@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link th:href= "@{/css/all.events.list.styles.css}" rel="stylesheet" />
+
+</head>
+<body th:replace="fragments/base::common-body(~{::#all-events-list-page},~{}, ~{})">
+<div id="all-events-list-page" class="container">
+
+    <h4 class="display-4"> Events: </h4>
+    <form th:action= "@{/AllEventsList}" class="search-box">
+        <input name="keyword" type="text" class="form-control"/>
+        <button class="btn btn-dark">Search</button>
+    </form>
+
+    <aside id="formLink">
+        <button class="btn btn-info" id="createNew" onclick="window.location.href ='/EventForm'">Create New</button>
+    </aside>
+
+    <article class="all-events-list-page__container" th:each="event : ${events}">
+
+        <section class="all-events-list-page__image">
+            <img th:src="@{${'/uploads/'+event.eventImage}}"  alt="...">
+        </section>
+
+        <section class="all-events-list-page__information-container">
+            <h6 class="display-6" th:text="${event.name}"></h6>
+            <h6 class="lead" th:text="${event.date}"></h6>
+            <div class="community-list__CTA">
+                <a class="btn btn-dark" th:href="@{${'/event/'+event.id}}">Read More</a>
+            </div>
+        </section>
+
+    </article>
+
+</div>
+</body>
+</html>

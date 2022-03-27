@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <link th:href= "@{/css/project.styles.css}" rel="stylesheet" />
+    <link th:href= "@{/css/projectlist.styles.css}" rel="stylesheet" />
+
+</head>
+<body th:replace="fragments/base::common-body(~{::#project-list-page},~{}, ~{})">
+<!--The header and footer is from the template-->
+<div id="project-list-page">
+<div id="project-list" class="container">
+    <form th:action="@{/projects/?keyword=}">
+    <div class="input-group mb-3">
+        <input type="text" id="searchbar" class="form-control" placeholder="Search projects..." name="keyword">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+        <button class="btn btn-outline-secondary" type="button" onclick="window.location.href ='/project-create'">New project</button>
+    </div>
+    </form>
+    <section class="project-index" >
+        <!--automatically create div-->
+        <article class="projectCard-container" th:each="project : ${projects}"> <!--        a kind of foreach in thymeleaf-->
+            <a class="project-cover" th:href="@{${'/project/'+project.id}}">
+                <img th:src="@{${'/uploads/'+project.projectCoverImage}}">
+                <div class="color-hr"></div>
+            </a>
+            <div class="project-content">
+                <h4 th:text="${project.name}"></h4>
+                <p th:text="${project.description}"></p>
+                <div class="btn-wrapper"><a th:href="@{${'/project/'+project.id}}" class="btn btn-secondary project-button">READ MORE</a></div>
+            </div>
+        </article>
+    </section>
+</div>
+</div>
+</body>
+</html>
