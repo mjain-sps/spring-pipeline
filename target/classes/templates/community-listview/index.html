@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base::common-header(~{::title},~{::link})">
+    <meta charset="UTF-8">
+    <title>Communities</title>
+    <link th:href="@{/css/community.list.styles.css}" rel="stylesheet"/>
+
+    <!--    Google Fonts connect-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar&family=Montserrat&family=Oswald:wght@200&display=swap" rel="stylesheet">
+</head>
+<body th:replace="fragments/base::common-body(~{::#community-list},~{} ,~{::script})">
+<div id="community-list" class="container">
+    <!-- We create a search form here -->
+    <form th:action="@{/communities/?keyword=}" class="search-box">
+        <input name="keyword" type="text" class="form-control"/>
+        <button class="btn btn-dark">SEARCH</button>
+    </form>
+
+    <div class="community-list__container" th:each="community : ${communities}">
+        
+        <div class="community-list__image">
+            <img th:src="@{${'/uploads/'+community.communityImage}}"  alt="...">
+        </div>
+        <div class="community-list__information-container">
+            <h6 class="display-6" th:text="${community.name}"></h6>
+            <div>
+                <span class="text-muted">Total Users</span>
+                <span class="text-muted" th:text="${community.userObjectSet.size()}"></span>
+                <span>&nbsp; || &nbsp;</span>
+                <span class="text-muted">On Going Projects</span>
+                <span class="text-muted" th:text="${community.projectSet.size()}"></span>
+                <span>&nbsp; || &nbsp;</span>
+                <span class="text-muted">Upcoming Events</span>
+                <span class="text-muted" th:text="${community.event.size()}"></span>
+            </div>
+
+            <div>
+                <p class="lead" th:text="${community.description}"></p>
+            </div>
+
+            <div class="community-list__CTA">
+                <a class="btn btn-info" th:href="@{/add-community}">Create New</a>
+            <a class="btn btn-dark" th:href="@{${'/community/'+community.id}}">READ MORE</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--Attach JS here-->
+<script></script>
+</body>
+</html>

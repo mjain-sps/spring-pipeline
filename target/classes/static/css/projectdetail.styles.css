@@ -1,0 +1,74 @@
+.project-cover-bg{
+    background-image: url("https://cdn2.hubspot.net/hubfs/6326501/boilerplate/grayscale-mountain.png");
+    background-position: center top !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    display: flex;
+    min-height: 400px;
+    position: relative;
+}
+.project-layout{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 !important;
+    margin-bottom: 3rem;
+}
+.project-detail{
+    overflow: hidden;
+    word-break: break-word;
+}
+.project-detail hr{
+    width: 95% !important;
+    margin: 0;
+}
+.description{
+    padding-right: 3rem;
+}
+.description img{
+    width: 95%;
+}
+.rightContent .projectCard-container:hover{
+    transform: scale(1) !important;
+}
+.projectCard-container{
+    width: 90%;
+    margin: 0 auto 1rem auto;
+    /*the community card will be fixed when scroll down*/
+    /*position: sticky;*/
+    /*top: 50px;*/
+}
+#fundsContent p{
+    margin-bottom: 0;
+}
+.progress-bar{
+    background-color: #acacac !important;
+}
+.carousel{
+    width: 72%;
+    margin: 2rem auto 0 auto;
+}
+.carousel-item{
+    background-image: url("https://cdn2.hubspot.net/hubfs/6326501/boilerplate/grayscale-mountain.png");
+    height:300px;
+}
+.carousel-item p,h5{
+    text-shadow: 0px 0px 10px black;
+}
+.events-container{
+    text-align: center;
+    background:#f5f6f7;
+    padding: 2rem 0 2rem 0;
+}
+.events-container h3{
+    font-weight: 600!important;
+    display: inline;
+}
+.events-header{
+    display: inline;
+    position: absolute;
+    right: 14%;
+    padding-top: 0.5rem;
+}
+#view-all-events:hover{
+    color: grey;
+}

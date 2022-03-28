@@ -1,0 +1,569 @@
+/* 
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --heading: 'Montserrat', sans-serif;
+}
+
+#landing {
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    background: #fff;
+    padding: 0px;
+}
+
+html, body{
+    height: 100%;
+} */
+
+#landing {
+    z-index: 0;
+    min-height: 100vh;
+}
+/* CSS Related to the community */
+.section--container{
+    background: #fff;
+    padding: 20px;
+    font-size: 12px;
+    margin: 20px auto;
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+.section--information{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.section-sub-header{
+    color: #01b6ff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+.section-header{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+.section-content{
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #8e9299;
+}
+.section--information a{
+    background-color: #bd69f3;
+    padding: 5px 10px;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    width: fit-content;
+}
+.section--information a:hover{
+    text-decoration: none;
+}
+.section-card__container{
+    display: flex;
+    width: 80%;
+    gap:20px;
+    
+}
+
+.community_card{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-shadow: 8px 16px 12px rgba(32, 32, 32, 0.4);
+    border-radius: 5px;
+}
+
+.section-card__container img{
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+.section-card__container a{
+    width: 100%;
+    background-color:#01b6ff;
+    color: #000;
+    cursor: pointer;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 14px;
+    font-weight: bold;
+}
+.section-card__container a:hover{
+    background-color: black;
+    color: white;
+}
+/* global Styling */
+
+/*
+img{
+    width: 100%;
+}
+ */
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+a{
+    text-decoration: none;
+    color:#000;
+}
+
+hr{
+    width:95vw;
+    margin: 0 auto;
+}
+/* ^ the end of global Styling */
+
+/* CSS for the Banner Section */
+
+/* .companyBanner{
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 30px;
+    margin-top: 8px;
+}
+
+.companyBannerMainContent{
+    padding: 0 2rem;
+    line-height: 1.7;
+}
+
+.companyBannerMainContent h2{
+    font-size: 2rem;
+    font-family: var(--heading);
+}
+
+.companyBannerMainContent h3{
+    padding: 1rem 0;
+}
+
+.companyBannerMainContent button{
+    border: none;
+    background: #252525;
+    padding: 14px 18px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 1s ease;
+}
+
+.companyBannerMainContent button a{
+    color: #f3f3f3;
+    transition: color 1s ease;
+}
+
+.companyBannerMainContent button:hover{
+    background: #606266;
+}
+
+.companyBannerMainContent button:hover a{
+    color: black;
+}
+
+
+.CompanyCurrentNewsHeadlines{
+    padding: 6px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    border: 1px solid black;
+}
+.CompanyCurrentNewsHeadlines:hover::before{
+    content: ">> ";
+    position: absolute;
+    left: -12px;
+}
+
+.importantTopics{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 12px;
+    height: 300px;
+}
+.companyBannerSubContent{
+    display: block;
+}
+.CompanyCurrentNewsHeadlines:hover{
+    animation: shake 0.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+
+} */
+
+/** Main Section **/
+/* main a{
+    padding: 15px 0;
+    display: block;
+    transition: all 0.5s;
+}
+
+main span{
+    transition: padding-left 0.5s;
+}
+
+main a:hover span{
+    padding-left: 5px;
+}
+
+main a:hover{
+    color: #7ac64d;
+} */
+
+/* main container left */
+/* 
+.MainContainerLeft{
+    padding: 30px 0 15px;
+}
+
+.MainContainerLeft > h2{
+    padding: 30px 0 15px 30px;
+}
+
+.MainContainerLeft h3{
+    padding: 10px 0;
+    font-size: 18px;
+    font-family: var(--heading);
+}
+
+.MainContainerLeft p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.MainContainerLeft article{
+    padding: 10px;
+}
+
+.containerTopLeft{
+    padding: 15px 30px;
+}
+
+.containerBottomLeft{
+    background: #f3f3f3;
+    margin: 15px 30px;
+} */
+
+
+/*
+
+    Main Container Right
+
+ */
+
+/* .MainContainerRight{
+    padding: 30px 10px;
+} */
+
+/* .MainContainerRight > h2{
+    padding: 15px 0 15px 30px;
+}
+
+.MainContainerRight article{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 15px 0;
+    border-bottom: 1px solid #7ac64d;
+}
+
+.MainContainerRight article:last-child{
+    border-bottom: none;
+}
+
+.MainContainerRight #img{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+}
+
+.MainContainerRight #h4{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 12px;
+    align-self: center;
+}
+
+.MainContainerRight article h2{
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: var(--heading);
+}
+
+.MainContainerRight article p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.MainContainerRight #div{
+    margin-right: 10px;
+} */
+
+/*
+
+    Slider
+
+ */
+/* 
+.dotsBox{
+    text-align: center;
+}
+
+#slider{
+    position: relative;
+    width: 100%;
+    background: #2c3e50;
+    margin-top: 10px;
+    z-index: 3;
+}
+.mySlider{
+    height: 655px;
+    display: none;
+    overflow: hidden;
+}
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 50px;
+    padding: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.1s;
+    user-select: none;
+}
+.prev:hover, .next:hover{
+    color:#0e0e0e;
+}
+.next{
+    right: 0;
+}
+.dotsBox{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20px;
+    cursor: pointer;
+}
+.dot{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+} */
+
+/* JS dot effect*/
+/* .active, .dot:hover{
+    border-color: #00aa37;
+}
+
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+@-webkit-keyframes fade {
+    from {opacity: 0.8}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: 0.8}
+    to {opacity: 1}
+}
+
+.txt{
+    position: absolute;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 35px;
+    top: 40%;
+    left: 15%;
+    -webkit-animation-name: posi;
+    -webkit-animation-duration: 2s;
+    animation-name: posi;
+    animation-duration: 2s;
+    z-index: 1;
+}
+
+@-webkit-keyframes posi {
+    from{left: 25%;}
+    to{left: 15%}
+}
+@keyframes posi {
+    from{left: 25%;}
+    to{left: 15%}
+}
+
+.txt h1{
+    color: #0e0e0e;
+    font-weight: bold;
+    margin: 20px;
+    font-family: var(--heading);
+}
+
+.txt p{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: var(--heading);
+}
+
+slider img{
+    transform: scale(1.5, 2.5);
+    -webkit-animation-name: zoomin;
+    -webkit-animation-duration: 40s;
+    animation-name: zoomin;
+    animation-duration: 40s;
+}
+
+@-webkit-keyframes zoomin {
+    from{transform: scale(1, 1);}
+    to{transform: scale(1.5, 1.5);}
+}
+
+@keyframes zoomin {
+    from{transform: scale(1, 1);}
+    to{transform: scale(1.5, 1.5);}
+} */
+
+/*
+
+        Media: Making the website responsive
+
+ */
+
+/* 
+@media (max-width: 460px) {
+.MainContainerRight article{
+    display: block;
+}
+    .MainContainerRight article #img{
+        display: block;
+    }
+}
+
+@media (max-width: 500px){
+    .MainContainerRight article{
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .MainContainerRight article #h4{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        align-self: flex-start;
+    }
+
+    .MainContainerRight article #img{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .MainContainerRight article #div{
+
+        grid-row: 1/3;
+        grid-column: 2/3;
+    }
+}
+
+@media (min-width: 768px) {
+    .bannerSubContent{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .containerBottomLeft{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 800px){
+
+}
+
+@media (min-width: 992px) {
+    main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1080px) {
+    .companyBanner{
+        grid-template-columns: 1fr 2fr;
+    }
+} */
+
+/*
+
+    slider
+
+ */
+/* 
+
+@media screen and (max-width: 800px) {
+    .my-slider{
+        height: 500px;
+    }
+
+    .txt{
+        line-height:25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        -webkit-animation-name: posi2;
+        -webkit-animation-duration: 2s;
+        animation-name: posi2;
+        animation-duration: 2s;
+    }
+    @keyframes posi2 {
+        from{top:35%}
+        to{top:50%}
+    }
+    .txt h1{
+        font-size: 40px;
+    }
+    .txt p{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .txt h1{
+        font-size: 30px;
+    }
+    .sign{
+        margin-right: 20px;
+    }
+    .sign a{
+        font-size: 12px;
+    }
+} */
+

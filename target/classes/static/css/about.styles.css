@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5rem;
+    font-family: 'Poppin', sans-serif;
+}
+:root{
+    --heading: "Poppins", sans-serif;
+}
+#AboutPage{
+    z-index: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ddd;
+}
+.about-us{
+    width: 100%;
+}
+.about-us h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #004044;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+    margin-top: 50px;
+}
+
+.about-us h1::after{
+    content: '';
+    background-color: #004044;
+    display: block;
+    height: 3px;
+    width: 800px;
+    margin: 10px auto;
+}
+
+.wrapper{
+    padding: 0px 60px;
+    margin: 60px auto;
+}
+
+.content{
+    width: 60%;
+    float: left;
+    text-align: left;
+    padding: 0px 30px;
+}
+
+.content h3{
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.content p{
+    font-family: sans-serif;
+    font-size: 17px;
+    color: #3d3d3d;
+    margin-top: 20px;
+}
+
+.image-selection{
+    width: 40%;
+    float: right;
+    padding: 0px 30px;
+}
+
+.image-selection img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Social Section */
+.content .social{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.content .social a{
+    text-decoration: none;
+    color: #fafafa;
+    font-size: 25px;
+    padding: 0px 7px;
+}
+
+.content .social a:hover{
+    color: #004044;
+}
+
+.content .social i{
+    height: 40px;
+    width: 40px;
+    background-color: #004044;
+    border: 1px solid #468403;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 40px;
+}
+.content .social i:hover{
+    background-color: #7ac64d;
+}
+
+/*
+
+        CSS for Expert Team
+
+ */
+.expertTeam{
+    margin: 75px 0;
+
+}
+.expertTeamContainer{
+    width: 100%;
+    margin-top: 500px;
+}
+.expertTeamContainer h1{
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.5rem;
+    color: #004044;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.expertTeamContainer h1::after{
+    content: '';
+    background-color: #004044;
+    display: block;
+    height: 3px;
+    width: 800px;
+    margin: 10px auto;
+}
+
+/* Expert profile card */
+.profile{
+    margin-top: 25px;
+}
+.profile .img-box{
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+.profile h2{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.profile h3{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.img-box:after{
+    content: '';
+    opacity: 0;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.img-box ul{
+    margin: 0;
+    padding: 20px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.img-box ul li {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 3px;
+    padding: 7px;
+    display: inline-block;
+}
+.img-box a{
+ color: #fff;
+}
+.img-box:hover:after{
+    opacity: 1;
+}
+.img-box:hover ul{
+    opacity: 1;
+}
+.img-box a:hover li {
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+.img-box:after, .img-box ul, .img-box ul li{
+    transition: all 0.5s ease-in-out 0s;
+}
+
+/* Making it responsive */
+@media screen and (max-width: 900px) {
+    .about-us{
+        width: 100%;
+        padding-top: 20px;
+    }
+    .about-us h1{
+        font-size: 32px;
+    }
+    .content{
+        width: 100%;
+        float: none;
+    }
+    .content .social{
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .content .social a{
+        font-size: 21px;
+    }
+    .image-selection{
+        float: none;
+        width: 100%;
+        margin-top: 25px;
+
+    }
+    .expertTeamContainer{
+        width: 100%;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .expertTeamContainer{
+        width: 100%;
+        float: none;
+    }
+}

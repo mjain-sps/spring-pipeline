@@ -1,0 +1,202 @@
+
+/* Start Universal Admin Page Wrapper */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --heading: "Poppins", sans-serif;
+}
+#AdminViewContactPage{
+    min-height: 100vh;
+    z-index: 0;
+}
+body, input, textarea{
+    font-family: var(--heading);
+}
+
+.admin-wrapper{
+    font-family: 'Raleway', sans-serif;
+    /* trying to make sure the container does not scroll: test */
+    display: flex;
+    height: calc(100% - 96px);
+}
+.admin-wrapper .left-sidebar{
+    min-height: 100vh;
+    flex: 2;
+    height: 100%;
+    background-color: #088F8F;
+}
+
+.admin-wrapper .left-sidebar ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+}
+.admin-wrapper .left-sidebar ul li a{
+    color: aliceblue;
+    font-size: 1rem;
+    padding: 18px;
+    display: block;
+    border-bottom: 1px solid #004044;
+}
+
+.admin-wrapper .left-sidebar ul li a:hover{
+    background-color: #004044;
+}
+.selected{
+    background-color: #004044;
+}
+
+.admin-wrapper .admin-content{
+    min-height: 100vh;
+    flex: 8;
+    height: 100%;
+    border: 1px solid green;
+}
+/* End Universal Admin Page Wrapper */
+
+/* Start of Admin Content */
+
+
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: #fafafa;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-content .page-title{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+}
+
+th, td{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #d3d3d3;
+    border-top: 2px solid #d3d3d3;
+    border-right: 2px solid #d3d3d3;
+    border-left: 2px solid #d3d3d3;
+
+}
+
+th{
+    background-color: #0e0e0e;
+    color: #f3f3f3;
+}
+td{
+    background-color: #606266;
+    color: #f3f3f3;
+}
+
+/* End of Admin Content */
+
+.social-media{
+    padding: 2rem 0 0 0;
+}
+
+.social-media p{
+    color: #333;
+}
+
+#social-icons{
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+#social-icons a{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #7ac64d, #00aa37);
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 0.5rem;
+    transition: 0.3s;
+}
+
+#social-icons a:hover{
+    transform: scale(1.05);
+}
+
+.contact-info:before{
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 130px;
+    border: 22px solid #7ac64d;
+    border-radius: 50%;
+    bottom: -69px;
+    right: 50px;
+    opacity: 0.3;
+}
+
+#download-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #00aa37;
+    background: linear-gradient(45deg, #7ac64d, #00aa37);
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 0.5rem;
+    transition: 0.3s;
+}
+#download-icon:hover{
+    transform: scale(1.05);
+}
+#bottom-btn{
+    float: initial;
+}
+#float-left{
+    float: left;
+}
+#download-btn{
+    float: right;
+}
+/* Making the form responsive */
+@media (max-width: 850px) {
+
+    #social-media{
+        padding: 1.5rem 0 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container{
+        padding: 1.5rem;
+    }
+
+
+    #social-icons a{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+
+
+    .input{
+        padding: 0.45rem 1.2rem;
+    }
+
+
+}

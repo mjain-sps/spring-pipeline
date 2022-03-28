@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin/About Page Editing</title>
+    <!-- css link for contact -->
+    <link rel="stylesheet" th:href="@{/css/admin.about.style.css}">
+
+    <!-- Link for CKEditor 5 -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+
+    <!-- JS link for contact -->
+    <script defer th:src="@{/js/admin.about.js}"></script>
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Link for Fontawesome -->
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body th:replace="fragments/base::common-body(~{::#AdminViewAboutPage},~{} ,~{::script})">
+
+<div id="AdminViewAboutPage">
+    <!-- Start Universal Admin Page Wrapper -->
+    <div class="admin-wrapper">
+
+
+        <!-- Start left sidebar -->
+        <div class="left-sidebar">
+            <ul>
+                <li><a th:href="@{/adminViewContact}">Manage Contact Page</a></li>
+                <li><a th:href="@{/adminViewAbout}" class="selected">Manage About Page</a></li>
+            </ul>
+
+        </div>
+        <!-- End left sidebar -->
+
+
+        <!-- Start Admin Content -->
+        <div class="admin-content">
+            <div class="container">
+                <div class="viewAbout-form">
+                    <h2>Edit About Page</h2>
+                    <form class="viewContact">
+                        <input id="aboutTitle" class="text-box" type="text"  placeholder="About Title" required>
+                        <textarea id="aboutBody" class="textarea"  rows="10" placeholder="The body text goes here ..." required></textarea>
+                        <input id="submit" type="submit" placeholder="submit" name="submit" class="send-btn">
+                    </form>
+                </div>
+
+             </div>
+         </div>
+        <!-- End Admin Content -->
+
+    </div>
+    <!-- End Universal Admin Page Wrapper -->
+
+
+
+</div>
+</body>
+</html>

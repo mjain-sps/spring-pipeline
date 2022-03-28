@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <link th:href= "@{/css/project.styles.css}" rel="stylesheet" />
+    <link th:href= "@{/css/projectlist.styles.css}" rel="stylesheet" />
+    <link th:href= "@{/css/projectdetail.styles.css}" rel="stylesheet" />
+    <link th:href= "@{/css/donationTransaction.css}" rel="stylesheet" />
+    <link th:href= "@{/css/donationTransactionForm.css}" rel="stylesheet" />
+</head>
+<body th:replace="fragments/base::common-body(~{::#project-detail-page},~{}, ~{::script})">
+<!--The header and footer is from the template-->
+<div id="project-detail-page">
+    <div class="project-cover-bg-wrapper"><div class="project-cover-bg" th:style="'background:url(' + @{${'/uploads/'+project.projectCoverImage}} + ');'"></div></div>
+    <br>
+    <div class="project-layout container">
+        <article class="project-detail" style="flex-basis: 66.66%;">
+            <h1 th:text="${project.name}"></h1><hr class="mb-3 mt-3">
+            <div class="description">
+                <p th:text="${project.description}"></p>
+                <p th:text="${project.description}+${project.description}+${project.description}+${project.description}"></p>
+                <p th:text="${project.description}+${project.description}"></p>
+<!-- this will be replaced by map api Todo-->
+                <img src="https://www.commonplace.is/hs-fs/hubfs/Vale%20of%20G%20phase%202.png?width=1500&name=Vale%20of%20G%20phase%202.png">
+            </div>
+        </article>
+        <div class="rightContent" style="flex-basis: 33.33%;">
+<!--            community information-->
+            <article class="projectCard-container">
+                <a class="project-cover" th:href="@{${'/community/'+projectCommunity.id}}">
+                    <img th:src="@{${'/uploads/'+projectCommunity.getCommunityImage()}}">
+                    <div class="color-hr"></div>
+                </a>
+                <div class="project-content">
+                    <h4 th:text="${projectCommunity.name}"></h4>
+                    <p th:text="${projectCommunity.description}"></p>
+                    <div class="btn-wrapper"><a th:href="@{${'/community/'+projectCommunity.id}}" class="btn btn-secondary project-button">READ MORE</a></div>
+                </div>
+            </article>
+<!--            funds information-->
+            <article class="projectCard-container" id="fundsContent">
+                <div class="project-content">
+                    <h4>Project Schedule</h4>
+                    <p id="fundsRequired" th:text="'Funds Required: '+${project.fundsRequired}+' GBP'"></p>
+                    <p id="fundsCollected" th:text="'Funds Collected: '+${project.fundsCollected}+' GBP'"></p>
+                    <div class="progress mb-3 mt-2">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" id="progressbar"></div>
+                    </div>
+                    <div class="btn-wrapper"><a id="donateButton" class="btn btn-secondary project-button" onclick="togglePopup()">DONATE</a></div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+    <!--            events information-->
+    <div class="events-container">
+        <h3 class="mb-3">Upcoming Events</h3><div class="events-header"><a id="view-all-events" th:href="@{${'/event/parent/'+project.id+'/?parent=project'}}">View All<i class="fa fa-arrow-right"></i></a></div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" th:each="event : ${projectEvents}">
+                   <a th:href="@{${'/event/'+event.id}}"><img th:src="@{${'/uploads/'+ event.eventImage}}" class="d-block w-100" alt="..."></a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 th:text="${event.name}">Slide label</h5>
+                        <p th:text="${event.aboutSection}">Some representative placeholder content for the slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+<!--    Donation form-->
+    <div id="DonationTransactionPage">
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content"  id="wrapper">
+                <div class="close-btn" onclick="togglePopup()">&times;</div>
+
+                <h2 class="transactionhTwo">Donation Form</h2>
+                <form >
+                    <h4 class="transactionhFour">Account</h4>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input id="donerName" type="text" placeholder="FullName" required class="name" maxlength="45" name="donerName">
+                            <i class="fa fa-user icon"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input id="donerEmail" type="email" placeholder="Email Address" required class="name" minlength="7" name="donerEmail">
+                            <i class="fa fa-envelope icon"></i>
+                        </div>
+                    </div>
+                    <h5 class="transactionhFive" for="Signup"><a id="SignUpRedirect" href="">If you do not have an account, Sign Up here.</a></h5>
+                    <br>
+                    <h4 class="transactionhFour">Project ID</h4>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input type="text" placeholder="Project ID: #21wqsd" contenteditable="false" required class="nameTwo" name="projectId" id="projectId">
+                            <i class="fa fa-file icon"></i>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <h4 class="transactionhFour">Donation Amount</h4>
+                            <input id="amount" type="number" placeholder="Enter Donation Amount" required class="nameTwo" name="amount">
+                        </div>
+                    </div>
+                    <h4 class="transactionhFour">Donation Date</h4>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input type="date" placeholder="dd/mm/yy" required class="nameTwo" name="donationDate"  id="date">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <h4 class="transactionhFour">Payment Details</h4>
+                            <input type="radio" name="Payment" id="bc1" checked class="radio">
+                            <label for="bc1"><span><i class="fa fa-cc-visa"></i>Credit Card</span></label>
+                            <input type="radio" name="Payment" id="bc2" class="radio">
+                            <label for="bc2"><span><i class="fa fa-cc-paypal"></i>Paypal</span></label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input id="creditCard" type="text" placeholder="Card Number: xxxx xxxx xxxx xxxx"  maxlength="16"required class="name" name="creditCard">
+                            <i class="fa fa-credit-card icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input id="cardCvc" type="text" placeholder="Card CVC" maxlength="3" required class="name"   name="cardCvc">
+                            <i class="fa fa-user icon"></i>
+                        </div>
+                        <div class="input-box">
+                            <select id="cardMonth" name="cardMonth">
+                                <option>Month</option>
+                                <option value="01" >01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="6">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select id="cardYear" name="cardYear">
+                                <option>Year</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <button id="createDonateButton" type="submit">Donate Now</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <!-- Content for Donation Form End -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/project.detail.js}"></script>
+<script th:src="@{/js/donationTransaction.js}"></script>
+
+</body>
+</html>

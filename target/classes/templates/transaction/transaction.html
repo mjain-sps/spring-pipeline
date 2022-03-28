@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project Donate Transaction</title>
+    <!-- PopUp Link and Script -->
+    <link rel="stylesheet" th:href="@{/css/donationTransaction.css}">
+    <script defer th:src="@{/js/donationTransaction.js}"></script>
+
+    <!-- Donation Form Link and Script -->
+    <link rel="stylesheet" th:href="@{/css/donationTransactionForm.css}">
+
+    <!-- Link for Fontawesome -->
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+
+</head>
+<body th:replace="fragments/base::common-body(~{::#DonationTransactionPage},~{} ,~{::script})">
+
+<!-- Donation Content -->
+<div id="DonationTransactionPage">
+
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content"  id="wrapper">
+            <div class="close-btn" onclick="togglePopup()">&times;</div>
+
+            <h2 class="transactionhTwo">Donation Form</h2>
+            <form >
+                <h4 class="transactionhFour">Account</h4>
+                <div class="input-group">
+                    <div class="input-box">
+                        <input id="donerName" type="text" placeholder="FullName" required class="name" maxlength="45" name="donerName">
+                        <i class="fa fa-user icon"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <input id="donerEmail" type="email" placeholder="Email Address" required class="name" minlength="7" name="donerEmail">
+                        <i class="fa fa-envelope icon"></i>
+                    </div>
+                </div>
+                <h5 class="transactionhFive" for="Signup"><a id="SignUpRedirect" href="">If you do not have an account, Sign Up here.</a></h5>
+                <br>
+                <h4 class="transactionhFour">Project ID</h4>
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="text" placeholder="Project ID: #21wqsd" contenteditable="false" required class="nameTwo" name="projectId" id="projectId">
+                        <i class="fa fa-file icon"></i>
+                    </div>
+                </div>
+                <br>
+                <div class="input-group">
+                    <div class="input-box">
+                        <h4 class="transactionhFour">Donation Amount</h4>
+                        <input id="amount" type="number" placeholder="Enter Donation Amount" required class="nameTwo" name="amount">
+                    </div>
+                </div>
+                <h4 class="transactionhFour">Donation Date</h4>
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="date" placeholder="dd/mm/yy" required class="nameTwo" name="donationDate"  id="date">
+                    </div>
+                </div>
+                <br>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <h4 class="transactionhFour">Payment Details</h4>
+                        <input type="radio" name="Payment" id="bc1" checked class="radio">
+                        <label for="bc1"><span><i class="fa fa-cc-visa"></i>Credit Card</span></label>
+                        <input type="radio" name="Payment" id="bc2" class="radio">
+                        <label for="bc2"><span><i class="fa fa-cc-paypal"></i>Paypal</span></label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <input id="creditCard" type="text" placeholder="Card Number: xxxx xxxx xxxx xxxx"  maxlength="16"required class="name" name="creditCard">
+                        <i class="fa fa-credit-card icon"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <input id="cardCvc" type="text" placeholder="Card CVC" maxlength="3" required class="name"   name="cardCvc">
+                        <i class="fa fa-user icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <select id="cardMonth" name="cardMonth">
+                            <option>Month</option>
+                            <option value="01" >01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="6">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select id="cardYear" name="cardYear">
+                            <option>Year</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <button id="createDonateButton" type="submit">Donate Now</button>
+                    </div>
+                </div>
+            </form>
+
+
+
+            <!-- Content for Donation Form End -->
+
+        </div>
+    </div>
+
+    <button onclick="togglePopup()">Donate</button>
+
+    <!-- The end of the body -->
+</div>
+
+</body>
+</html>

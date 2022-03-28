@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin/Contact Enquires</title>
+    <!-- css link for contact -->
+    <link rel="stylesheet" th:href="@{/css/administration.contact.style.css}">
+    <script defer th:src="@{/js/administration.contact.js}"></script>
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Link for Fontawesome -->
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body th:replace="fragments/base::common-body(~{::#AdminViewContactPage},~{} ,~{::script})">
+
+<div id="AdminViewContactPage">
+
+    <!-- Start Universal Admin Page Wrapper -->
+    <div class="admin-wrapper">
+
+
+        <!-- Start left sidebar -->
+        <div class="left-sidebar">
+            <ul>
+                <li><a th:href="@{/adminViewContact}" class="selected">Manage Contact Page</a></li>
+                <li><a th:href="@{/adminViewAbout}">Manage About Page</a></li>
+            </ul>
+
+        </div>
+        <!-- End left sidebar -->
+
+
+        <!-- Start Admin Content -->
+        <div class="admin-content">
+            <div class="container">
+                <div class="content">
+                    <h2 class="page-title">View Contact Queries</h2>
+
+                    <table>
+                        <thead>
+                            <th>Fullname</th>
+                            <th>Email</th>
+                            <th>Phone No.</th>
+                            <th>Query</th>
+                            <th>Documentation</th>
+                        </thead>
+                        <tbody>
+                            <tr th:each="contact: ${contacts}">
+                                <td th:text="${contact.name}">No Data Stored</td>
+                                <td th:text="${contact.email}">No Data Stored</td>
+                                <td th:text="${contact.phone}">No Data Stored</td>
+                                <td th:text="${contact.message}">No Data Stored</td>
+                                <td>
+                                    <!-- updated upload button -->
+                                    <label  id ="download-container" for="downloadInput"><i id="download-icon" name="upload-icon" class="fa fa-download"></i></label>
+                                    <a th:text="${contact.uploadInput}" id="downloadInput" download ></a>
+                                    <p id="downloadStatus"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- End Admin Content -->
+
+    </div>
+    <!-- End Universal Admin Page Wrapper -->
+
+
+
+</div>
+
+</body>
+</html>

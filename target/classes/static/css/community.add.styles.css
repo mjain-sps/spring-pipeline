@@ -1,0 +1,122 @@
+#add-community {
+    position: relative;
+    background-color: beige;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.community-add__form-container {
+    width: 90vw !important;
+    height: 95vh !important;
+    position: absolute;
+    top: 2vh;
+    left: 5vw;
+}
+
+.community-add__image-vignette {
+    min-height: 100%;
+    min-width: 100%;
+    background: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.community-add__image-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.community-add__image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 80% 50%;
+}
+
+.community-add__form {
+    /*background: #20B2AA;*/
+    background: whitesmoke;
+    position: absolute;
+    right: 2%;
+    height: 96%;
+    top: 2%;
+    width: 33%;
+    box-shadow: rgba(244, 164, 96, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.input-group label {
+    display: block;
+    width: 100%;
+    background: transparent;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    color: #303030;
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Eczar', serif;*/
+    /*font-family: 'Oswald', sans-serif;*/
+}
+
+.address_container {
+    display: flex;
+    padding: 1%;
+    gap: 3%;
+}
+
+.address__left-column, .address__right-column {
+    width: 48%;
+}
+
+.com-add__disclaimer {
+    background: white;
+    color: #808080;
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.com-add__submit-button {
+    background: #FF7F50;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #1B1212;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: 100%;
+    padding: 10px;
+}
+
+p {
+    font-size: 13px;
+    color: #303030;
+    /*font-family: 'Eczar', serif;*/
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
+    display: block;
+    width: 100%;
+}
+
+.image-upload__CTA-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.upload-image__label{
+    width: 90px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #088F8F !important;
+    color: antiquewhite !important;
+    text-align: center;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    vertical-align: middle;
+}

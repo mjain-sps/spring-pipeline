@@ -1,0 +1,113 @@
+#login-page{
+    background-color: #667f8f;
+    position: relative;
+    height: 100vh;
+    margin: auto;
+}
+
+.login-container{
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    left: 25vw;
+    top: 10vh;
+    box-shadow: 8px 16px 12px rgba(8, 8, 8, 0.7);
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.login__header-container{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b3337;
+}
+.login__header-container h4{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+}
+.login__form-container{
+    width: calc(100% - 200px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+.login__form-container form{
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-evenly;
+    gap: 30px;
+}
+.login__form-container input{
+    width: 100%;
+    height: 50px;
+    background-color: #cccccc;
+    border: none;
+    border-radius: 5px;
+    padding: 0 5px ;
+}
+
+input::placeholder{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #282828;
+}
+.login__form-container span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+.login__form-container a{
+    font-family: 'Architects Daughter', cursive;
+    text-decoration: none;
+    color:#50C878 ;
+    font-size: 16px;
+}
+.login__form-container a:hover{
+    text-decoration: none;
+}
+.disclaimer-section{
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid black;
+    
+}
+
+.hide_disclaimer{
+    display: none;
+}
+.disclaimer-content-section{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: white;
+    color: #282828;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+.title-disclaimer{
+    color: #282828;
+    font-size: 14px;
+    font-weight:bold ;
+    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+}
+.disclaimer-content-section p{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+

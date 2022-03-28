@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.com">
+
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Co-Community</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Creating Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet">
+
+    <!--Landing css(it will also be commonly shared)-->
+    <link th:href="@{/css/landing.style.css}" rel="stylesheet"/>
+
+</head>
+<body th:replace="fragments/base::common-body(~{::#landing},~{} ,~{::script})">
+
+<div id="landing">
+    <!--Section for the creation for the slider-->
+
+<main>
+
+
+    <!--Section for the company banner-->
+    <section>
+        <!-- <div class="companyBannerMainContent"> -->
+            <!-- this is another button that will redirect users to the project page -->
+            <!-- <h2>LATEST PROJECTS IN YOUR COMMUNITY</h2>
+            <h3>View all the project in your community</h3>
+
+            <button type="button" name="buttonProject">
+                <a th:href="@{/projects}">More Info</a>
+            </button> -->
+
+            <div class="section--container">
+                <!-- Left Section which is static and shows some information about communitites in general -->
+                <div class="section--information">
+                    <p class="section-sub-header">Communities</p>
+                    <h4 class="section-header">Our Communities Makes Difference</h4>
+                    <p class="section-content">Communities allow us to collaborate on fun and exciting projects as well as events. Come join us. </p>
+                    <a th:href="@{/communities}">View All</a>
+                </div>
+                <div class="section-card__container" id="community_card--container"  >
+            <!-- This div will show the community name.-->
+            <!-- This gets dynamically generated from JS and gets appended here -->
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <!-- <div class="bannerSubContent">
+            <div class="importantTopics">
+                <div class="companyBannerSubContent"> -->
+                    <!--This div will show community images-->
+                <!-- </div>
+            </div>
+        </div> -->
+
+    </section>
+    <hr>
+
+    <!-- Projects Section -->
+    <section>
+        <div class="section--container">
+            <!-- Here we swap the positions -->
+            <div class="section-card__container" id="project_card--container" >
+
+            </div>
+
+            <div class="section--information">
+                <p class="section-sub-header">Projects</p>
+                <h4 class="section-header">Our Projects Make Impact</h4>
+                <p class="section-content">Our projects are varied, multi cultural and promotes diversity. We create useful projects which helps the communities.</p>
+                <a th:href="@{/projects}">View All</a>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- Events Section -->
+    <section>
+        <div class="section--container">
+            <!-- Here we swap the positions -->
+            <div class="section--information">
+                <p class="section-sub-header">Events</p>
+                <h4 class="section-header">Join in Any of the Events and EXPLORE</h4>
+                <p class="section-content">Events showcase exciting opportunities available across various communities and projects. Come and be a part of one.</p>
+                <a th:href="@{/AllEventsList}">View All</a>
+            </div>
+            <div class="section-card__container" id="event_card--container" >
+
+            </div>
+
+           
+        </div>
+    </section>
+</main>
+
+    <!--PROJECTS HERE-->
+    <!-- <main>
+        <section class="MainContainerLeft">
+            <h2>Our Platforms</h2>
+            <div class="containerTopLeft">
+                <article>
+                    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/uaLAY6mTFHI?rel=0" title="About our organisation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </article>
+                <div>
+                    <h3>About Our Platform</h3>
+                    <p>This platform encourages our people to embark on a journey as a community, as we encourage involved with any changes that may occur with our beloved city.</p>
+                    <a th:href="@{#}">Read More <span>>></span></a>
+                </div>
+            </div>
+
+            <div class="ContainerBottomLeft"> -->
+                <!--DISPLAYING PROJECTS BELOW-->
+                <!-- <article>
+                    <div class="projectImageContainer"> -->
+                        <!--This div will show project images-->
+                    <!-- </div>
+                    <div>
+                        <div class="projectNameContainer"> -->
+                            <!--This div will show project names-->
+                        <!-- </div>
+                        <a th:href="@{#}">View More Projects <span>>></span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="MainContainerRight"> -->
+            <!-- <h2>Latest Stories</h2> Presenting the latest events in the community -->
+            <!--EVENTS HERE-->
+            <!-- <article>
+                <div id="h4" class="eventNameContainer"> -->
+                    <!--This div will show Event names-->
+                <!-- </div>
+                <div id="div">
+                    <div id="img" class="eventImageContainer"> -->
+                        <!--This div will show event images-->
+                    <!-- </div>
+                    <a th:href="@{#}">View More Events <span>>></span></a>
+                </div>
+            </article>
+        </section>
+    </main> -->
+
+
+
+
+
+    <!-- link for Fontawesome -->
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+
+</div>
+<script th:src="@{/js/landing.js}" async defer></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base::common-header(~{::title}, ~{::link})">
+    <meta charset="UTF-8">
+    <title>Create a project</title>
+    <link th:href= "@{/css/project.styles.css}" rel="stylesheet" />
+</head>
+<body th:replace="fragments/base::common-body(~{::#createProject-page},~{}, ~{::script})">
+<!--The header and footer is from the template-->
+<div id="createProject-page">
+    <div class = "master-container">
+        <!--add a transparent filter to lower the contrast of the background image-->
+        <div class="add-white-filter"></div>
+        <div class = "form-container">
+            <form action="/processFormPost" method="Post">
+                <div id="projectContent" class="projectCard">
+                    <h2>Create Project</h2><hr>
+                    <label class="form-label" for="projectName">Project Name:</label>
+                    <input class = "form-control" id="projectName" placeholder="Enter your project name here..." name="projectName"/>
+                    <label class="form-label" for="description">Description:</label>
+                    <textarea class = "form-control" id="description" cols="70" rows="6" placeholder="Enter a description here..."></textarea>
+                    <label class="form-label" for="projectLocation">Project Location:</label>
+                    <input class = "form-control" id="projectLocation" placeholder="Enter project location here..." name="projectLocation"/>
+                    <label class = "form-label" for="fundsRequired">Funds Required and Collected: </label>
+                    <!--input-group is for adding elements on either side of textual inputs-->
+                    <div class="input-group">
+                        <input class = "form-control" id="fundsRequired" placeholder="Funds required..."/>
+                        <span class="input-group-text">£</span>
+                        <input class = "form-control" id="fundsCollected" placeholder="Funds collected.."/>
+                        <span class="input-group-text">£</span>
+                    </div>
+                    <select class="form-select mt-3" id="communitySelect" name="communitySelect">
+                        <option selected>Choose a community</option>
+                    </select>
+                    <label for="uploadCoverImg" class="form-label mt-3">Upload Cover Image For Project:</label>
+                    <input class="form-control" type="file" id="uploadCoverImg">
+                    <div class = "button-container">
+                        <button id="createProject-button" class="btn btn-secondary text-nowrap project-button">Create Project</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/createproject.js}"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+#createProject-page{
+    background-color: #f5f6f7;
+    min-height: 100vh !important;
+    padding: 16px 0 16px 0;
+}
+.master-container{
+    margin: 0 auto;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 4px;
+    background-image: url("../images/project/add-project-bg.png");
+    background-size:100%;
+}
+.projectCard{
+    opacity: 0.9;
+    background-color: #ffffff;
+    border-radius: 0 4px 0 4px;
+    padding: 24px 64px;
+    margin: 0px 0% 20px 61.8%;
+    box-shadow: -6px 4px 15px -8px #888888;
+}
+.form-control {
+    font-size: 14px !important;
+    font-weight: 300 !important;
+}
+
+.form-control:focus{
+    border-color: #d21033!important;
+    box-shadow:0 0 0 0.25rem rgb(210 16 51 / 50%)!important;
+}
+.form-label{
+    color: #303030;
+    margin-top: 10px;
+    margin-right: 1rem !important;
+    margin-bottom: 0px !important;
+}
+.input-group{
+    align-items: baseline !important;
+}
+.input-group-text {
+    font-size: 14px !important;
+}
+.form-select{
+    color: #606266 !important;
+    font-size: 14px !important;;
+}
+.form-select:focus {
+    border-color: #d21033!important;
+    box-shadow:0 0 0 0.25rem rgb(210 16 51 / 50%)!important;
+}
+.button-container{
+    padding: 1rem 0 1rem 0;
+}
+.project-button{
+    width: 100%;
+    background-color: #00aa37;
+    border-color: #00ff52;
+}
+.project-button:hover{
+    background-color: #d21033;
+    border-color: #ff143e;
+}
+.add-white-filter{
+    min-height: 91%;
+    min-width: 80%;
+    background: #ffffff;
+    opacity: 0.05;
+    position: absolute;
+    /* top: 0; */
+    left: 10%;
+}
